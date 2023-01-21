@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  align-items: center;
+  &__link {
+    width: 279px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  &__name {
+    font-weight: 600;
+    text-align: right;
+  }
+  &__avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+  }
+}

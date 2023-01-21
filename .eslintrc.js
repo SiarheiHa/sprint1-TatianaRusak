@@ -21,10 +21,15 @@ module.exports = {
             },
         ],
         'import/no-default-export': 'error',
-        indent: 'off', // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
+        indent: 'off',
+        // https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/indent.md
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^action' }],
-        "no-nested-ternary": "off",
-        "no-unneeded-ternary": "off"
+        'no-nested-ternary': 'off',
+        'no-unneeded-ternary': 'off',
+        'react/jsx-first-prop-new-line': [2, 'multiline'],
+        'react/jsx-max-props-per-line': [2, { maximum: 2, when: 'multiline' } ],
+        // 'react/jsx-indent-props': [2, 2],
+        // 'react/jsx-closing-bracket-location': [ 2, 'tag-aligned' ],
     },
     ignorePatterns: ['coverage', 'cypress.config.ts'],
 };

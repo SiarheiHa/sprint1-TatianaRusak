@@ -1,0 +1,16 @@
+.footer {
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  &__copyright {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__social-list {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+  }
+}
