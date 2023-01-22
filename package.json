@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "mochawesome": "^7.1.3",
+    "nanoid": "^4.0.0",
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
