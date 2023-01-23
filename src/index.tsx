@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
-import { Footer } from './components/footer/footer';
-import { Header } from './components/header/header';
+import { Layout } from './components/layout/layout';
 import { MainPage } from './pages/main';
 
 import './index.scss';
@@ -12,16 +11,15 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <div className="wrapper">
-      <Header />
-
+    <div className='wrapper'>
       <HashRouter>
         <Routes>
-          <Route path='/' element={<MainPage />} />
+          <Route path='/' element={<Layout />}>
+            <Route index={true} element={<MainPage />} />
+            {/* <Route path='offerta' element={<Offerta />} /> */}
+          </Route>
         </Routes>
       </HashRouter>
-
-      <Footer />
     </div>
   </React.StrictMode>
 );

@@ -2,19 +2,21 @@
 
 .menu {
   width: 280px;
+  margin-right: 6px;
   &__item {
     position: relative;
     & h5 {
       font-weight: 700;
       font-size: 18px;
       line-height: 28px;
+      margin-top: 0;
     }
     &:first-child h5:after {
       position: absolute;
       left: 0;
       top: 40px;
       content: '';
-      width: 100%;
+      width: 90%;
       height: 2px;
       background-color: $color-text-dark;
     }
