@@ -4,6 +4,8 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import { Layout } from './components/layout/layout';
 import { MainPage } from './pages/main';
+import { OffertaPage } from './pages/offerta/offerta-page';
+import { RulesPage } from './pages/rules/rules-page';
 
 import './index.scss';
 
@@ -16,7 +18,8 @@ root.render(
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route index={true} element={<MainPage />} />
-            {/* <Route path='offerta' element={<Offerta />} /> */}
+            <Route path='/rules' element={<RulesPage />} />
+            <Route path='/offerta' element={<OffertaPage />} />
           </Route>
         </Routes>
       </HashRouter>

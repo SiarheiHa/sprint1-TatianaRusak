@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { nanoid } from 'nanoid';
 
@@ -39,10 +40,14 @@ export const Menu = () => {
           <ul className='submenu__categories'>{menuItems}</ul>
         </li>
         <li className='menu__item'>
-          <h5>Правила пользования</h5>
+          <Link to='/rules'>
+            <h5>Правила пользования</h5>
+          </Link>
         </li>
         <li className='menu__item'>
-          <h5>Договор оферты</h5>
+          <Link to='/offerta'>
+            <h5>Договор оферты</h5>
+          </Link>
         </li>
       </ul>
     </aside>
