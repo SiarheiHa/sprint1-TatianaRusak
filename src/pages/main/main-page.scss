@@ -7,4 +7,10 @@ main {
   display: flex;
   flex-direction: row;
   margin-top: 62px;
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 24px;
+  }
 }

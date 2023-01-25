@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+
+.book {
+  width: 190px;
+  height: 470px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18),
+    0px 1px 5px rgba(191, 196, 201, 0.24);
+  border-radius: 10px;
+  padding: 8px 8px 16px;
+  margin-top: 32px;
+  &__image {
+    width: 174px;
+    height: 242px;
+    border-radius: 10px;
+  }
+  &__rating {
+    margin-top: 16px;
+  }
+  &__rating > span {
+    color: $color-text-light;
+    margin-right: 8px;
+  }
+  &__name {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    font-weight: 600;
+    color: $color-text-dark;
+    flex-basis: 50px;
+    vertical-align: middle;
+  }
+  &__author {
+    color: $color-text-middle;
+    margin-top: 8px;
+  }
+  &__reserve {
+    height: 40px;
+    width: 166px;
+    margin-top: 28px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    border: none;
+    &.no-booked {
+      background: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+      color: #ffffff;
+    }
+    &.is-booked {
+      background: #ffffff;
+      border: 1px solid #bfc4c9;
+      border-radius: 20px;
+      color: $color-text-dark;
+    }
+    &.is-booked-till {
+      background: #f9f9fa;
+      border: 1px solid #bfc4c9;
+      border-radius: 20px;
+      color: $color-text-light;
+    }
+  }
+}
