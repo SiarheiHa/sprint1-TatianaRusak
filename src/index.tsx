@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 
 import { Layout } from './components/layout/layout';
+import { LayoutMainPage } from './components/layout-main-page/layout-main-page';
+import { BookPage } from './pages/book';
 import { MainPage } from './pages/main';
 import { OffertaPage } from './pages/offerta/offerta-page';
 import { RulesPage } from './pages/rules/rules-page';
@@ -17,9 +19,13 @@ root.render(
       <HashRouter>
         <Routes>
           <Route path='/' element={<Layout />}>
-            <Route index={true} element={<MainPage />} />
-            <Route path='/rules' element={<RulesPage />} />
-            <Route path='/offerta' element={<OffertaPage />} />
+            <Route path='/' element={<LayoutMainPage />}>
+              <Route index={true} element={<MainPage />} />
+              <Route path='rules' element={<RulesPage />} />
+              <Route path='offerta' element={<OffertaPage />} />
+            </Route>
+            <Route path='/books/:category/:bookId' element={<BookPage />} />
+            {/* <Route path='/profile' element={<Profile />} /> */}
           </Route>
         </Routes>
       </HashRouter>

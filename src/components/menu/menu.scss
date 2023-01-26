@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .menu {
-  width: 280px;
+  min-width: 280px;
   margin-right: 6px;
   &__item {
     position: relative;
@@ -11,16 +11,7 @@
       line-height: 28px;
       margin-top: 0;
     }
-    &:first-child h5:after {
-      position: absolute;
-      left: 0;
-      top: 40px;
-      content: '';
-      width: 90%;
-      height: 2px;
-      background-color: $color-text-dark;
-    }
-    &.active h5 {
+    & a.active h5 {
       background: linear-gradient(231.58deg, $color-accent-dark -53.35%, $color-accent-light 297.76%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -29,6 +20,18 @@
     &:first-child.active h5:after {
       background: linear-gradient(231.58deg, $color-accent-dark -53.35%, $color-accent-light 297.76%);
     }
+  }
+  &__link.showcase:after {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    content: '';
+    width: 90%;
+    height: 2px;
+    background-color: $color-text-dark;
+  }
+  &__link.showcase.active:after {
+    background: linear-gradient(231.58deg, $color-accent-dark -53.35%, $color-accent-light 297.76%);
   }
   .submenu {
     &__cat {

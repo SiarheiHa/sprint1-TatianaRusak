@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { nanoid } from 'nanoid';
 
@@ -26,28 +26,30 @@ const categories = [
 export const Menu = () => {
   const menuItems = categories.map((item) => (
     <li className='submenu__cat' key={nanoid()}>
-      <a href='/'>
+      <NavLink to='/'>
         {item.genre} <span>{item.count}</span>
-      </a>
+      </NavLink>
     </li>
   ));
 
   return (
     <aside className='menu'>
       <ul className='menu_list'>
-        <li className='menu__item active'>
-          <h5>Витрина книг</h5>
+        <li className='menu__item '>
+          <NavLink to='/' className='menu__link showcase'>
+            <h5>Витрина книг</h5>
+          </NavLink>
           <ul className='submenu__categories'>{menuItems}</ul>
         </li>
         <li className='menu__item'>
-          <Link to='/rules'>
+          <NavLink to='/rules' className='menu__link'>
             <h5>Правила пользования</h5>
-          </Link>
+          </NavLink>
         </li>
         <li className='menu__item'>
-          <Link to='/offerta'>
+          <NavLink to='/offerta' className='menu__link'>
             <h5>Договор оферты</h5>
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </aside>
