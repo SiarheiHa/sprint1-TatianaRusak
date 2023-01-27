@@ -1,0 +1,194 @@
+@import '../../styles/variables';
+
+.book-page {
+  &__breadcrumbs {
+    position: relative;
+    width: 100%;
+    height: 64px;
+    padding: 20px 0;
+    background: #f9f9fa;
+    color: #a7a7a7;
+    margin-bottom: 42px;
+    margin-top: 38px;
+  }
+  &__book-info {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+  }
+  &__book-cover {
+    min-width: 445px;
+    height: fit-content;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: $color-text-dark;
+    margin-bottom: 24px;
+  }
+  &__author {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: $color-text-light;
+    margin-bottom: 30px;
+  }
+  &__reserve-button {
+    width: 350px;
+    height: 52px;
+    margin-bottom: 62px;
+    & button {
+      width: 100%;
+      height: 100%;
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: none;
+    }
+    .no-booked {
+      background: linear-gradient(231.58deg, #f83600 -53.35%, #f9d423 297.76%);
+      color: #ffffff;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .is-booked {
+      background: #ffffff;
+      border: 1px solid #bfc4c9;
+      border-radius: 20px;
+      color: $color-text-dark;
+      background: #ffffff;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.2px;
+      color: $color-text-dark;
+    }
+    .is-booked-till {
+      background: #f9f9fa;
+      border: 1px solid #bfc4c9;
+      border-radius: 20px;
+      color: $color-text-light;
+    }
+  }
+  &__description-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: $color-text-dark;
+    margin-bottom: 32px;
+  }
+  &__description-text {
+    font-size: 16px;
+    line-height: 24px;
+    color: $color-text-dark;
+    & p {
+      margin-bottom: 24px;
+    }
+    & p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .additional {
+    margin-top: 42px;
+    &__rating {
+      margin-bottom: 60px;
+    }
+    &__title,
+    &__rating span {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 28px;
+      color: #363636;
+    }
+    &__title {
+      position: relative;
+    }
+    &__title > span {
+      font-size: 14px;
+      line-height: 24px;
+      color: $color-text-light;
+    }
+    &__title:after {
+      position: absolute;
+      content: '';
+      width: 350px;
+      height: 1px;
+      top: 43px;
+      left: 0;
+      background-color: #ebebeb;
+    }
+    &__rate-stars {
+      margin-top: 35px;
+      display: flex;
+      flex-direction: row;
+      gap: 26px;
+    }
+    &__properties {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      row-gap: 16px;
+      column-gap: 144px;
+      width: 50%;
+      height: 217px;
+    }
+    &__prop {
+      display: flex;
+      column-gap: 74px;
+    }
+    &__prop-name {
+      display: inline-block;
+      width: 118px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-text-light;
+    }
+    &__prop-value {
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-text-dark;
+    }
+  }
+  .feedback {
+    &__item {
+      margin-top: 33px;
+      margin-bottom: 40px;
+    }
+    &__user {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      align-items: center;
+      font-size: 16px;
+      line-height: 24px;
+      color: $color-text-middle;
+    }
+    &__rating {
+      margin-top: 18px;
+    }
+    &__text {
+      margin-top: 18px;
+      width: 65%;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.1px;
+      color: $color-text-dark;
+    }
+  }
+  &__rate-btn {
+    width: 350px;
+    height: 52px;
+    background: linear-gradient(233.73deg, #f83600 -16.08%, #f9d423 327.37%);
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}

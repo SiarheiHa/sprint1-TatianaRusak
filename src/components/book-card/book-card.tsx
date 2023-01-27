@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 import bookCover from '../../assets/images/book.jpg';
@@ -9,17 +10,20 @@ import './book-card.scss';
 
 type BookCardProps = {
   book: IBook;
-  key: string;
 };
 
-export const BookCard = ({ book, key }: BookCardProps) => {
-  const bookedTill = `Заната до 24.05`;
+export const BookCard = ({ book }: BookCardProps) => {
+  const bookedTillDate = new Date(Date.parse(book.bookedTill.split(' ')[0])).getDate();
+  const bookedTillMonth = new Date(Date.parse(book.bookedTill.split(' ')[0])).getMonth() + 1;
+  const bookedTill = `занята до ${bookedTillDate}.${bookedTillMonth}`;
 
   return (
-    <div className='book' key={key}>
-      <img src={bookCover} alt='book cover' className='book__image' />
+    <li className='book' key={book.id}>
+      <Link to={`/books/${book.category}/${book.id}`}>
+        <img src={bookCover} alt='book cover' className='book__image' />
+      </Link>
 
-      <Rating rate={3} />
+      <Rating rate={book.rating} />
 
       <div className='book__name'>
         <div className='book__title'>{book.title} </div>
@@ -44,6 +48,6 @@ export const BookCard = ({ book, key }: BookCardProps) => {
           {bookedTill}
         </button>
       )}
-    </div>
+    </li>
   );
 };

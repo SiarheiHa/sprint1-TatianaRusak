@@ -3,31 +3,17 @@ import { NavLink } from 'react-router-dom';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { nanoid } from 'nanoid';
 
+import bookStore from '../../utils/books.json';
+
 import './menu.scss';
 
-const categories = [
-  { genre: 'Все книги', count: null },
-  { genre: 'Бизнес-книги', count: 14 },
-  { genre: 'Детективы', count: 8 },
-  { genre: 'Детские книги', count: 14 },
-  { genre: 'Зарубежная литература', count: 2 },
-  { genre: 'История', count: 5 },
-  { genre: 'Классическая литература', count: 12 },
-  { genre: 'Книги по психологии', count: 11 },
-  { genre: 'Компьютерная литература', count: 54 },
-  { genre: 'Культура и искусство', count: 5 },
-  { genre: 'Наука и образование', count: 2 },
-  { genre: 'Публицистическая литература', count: 0 },
-  { genre: 'Справочники', count: 10 },
-  { genre: 'Фантастика', count: 12 },
-  { genre: 'Юмористическая литература', count: 8 },
-];
-
 export const Menu = () => {
-  const menuItems = categories.map((item) => (
+  const categoriesFullOfBooks = Object.entries(bookStore);
+
+  const menuItems = categoriesFullOfBooks.map((item) => (
     <li className='submenu__cat' key={nanoid()}>
-      <NavLink to='/'>
-        {item.genre} <span>{item.count}</span>
+      <NavLink to={`/books/${item[0]}`} className='submenu__link'>
+        <span>{item[0]}</span> <span>{item[1].length}</span>
       </NavLink>
     </li>
   ));
@@ -36,7 +22,7 @@ export const Menu = () => {
     <aside className='menu'>
       <ul className='menu_list'>
         <li className='menu__item '>
-          <NavLink to='/' className='menu__link showcase'>
+          <NavLink to='/books' className='menu__link showcase'>
             <h5>Витрина книг</h5>
           </NavLink>
           <ul className='submenu__categories'>{menuItems}</ul>

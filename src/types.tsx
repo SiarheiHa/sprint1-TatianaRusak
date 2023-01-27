@@ -1,6 +1,6 @@
 export interface IBook {
   id: string;
-  image: string;
+  image?: string | undefined;
   category: string;
   author: string;
   title: string;
@@ -9,3 +9,5 @@ export interface IBook {
   isBooked: boolean;
   bookedTill: string;
 }
+
+export type IBookStore = Record<string, IBook[]>;

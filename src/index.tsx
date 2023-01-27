@@ -15,20 +15,20 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <div className='wrapper'>
-      <HashRouter>
-        <Routes>
-          <Route path='/' element={<Layout />}>
-            <Route path='/' element={<LayoutMainPage />}>
-              <Route index={true} element={<MainPage />} />
-              <Route path='rules' element={<RulesPage />} />
-              <Route path='offerta' element={<OffertaPage />} />
-            </Route>
-            <Route path='/books/:category/:bookId' element={<BookPage />} />
-            {/* <Route path='/profile' element={<Profile />} /> */}
+    <HashRouter>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route path='/' element={<LayoutMainPage />}>
+            <Route index={true} element={<MainPage />} />
+            <Route path='/books' element={<MainPage />} />
+            <Route path='/books/:category' element={<MainPage />} />
+            <Route path='rules' element={<RulesPage />} />
+            <Route path='offerta' element={<OffertaPage />} />
           </Route>
-        </Routes>
-      </HashRouter>
-    </div>
+          <Route path='books/:category/:bookId' element={<BookPage />} />
+          {/* <Route path='profile' element={<Profile />} /> */}
+        </Route>
+      </Routes>
+    </HashRouter>
   </React.StrictMode>
 );
